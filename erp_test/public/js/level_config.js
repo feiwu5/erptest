@@ -2,21 +2,39 @@ const INGREDIENT_MAPPING = {
     
     1: { name: "四季豆", img: "foursidedbean.png" },
     2: { name: "甘梅地瓜", img: "sweetpotato.png" },
-    3: { name: "酥炸豆干", img: "tofu.png" },
-    4: { name: "美味四季豆", img: "bean.png" },
-    5: { name: "香Q鳥蛋", img: "bird_egg.png" },
+    3: { name: "酥炸豆干", img: "tocan.png" },
+    4: { name: "鑫鑫腸", img: "xinxinchang.png" },
+    5: { name: "雞蛋豆腐", img: "egg_tofu.png" },
     
-    6: { name: "青蔥", img: "onion.png" },
+    6: { name: "雞心", img: "chicken_heart.png" },
     7: { name: "玉米筍", img: "corn.png" },
-    8: { name: "芋頭糕", img: "taro.png" },
+    8: { name: "魷魚腳", img: "squid_legs.png" },
     9: { name: "米血糕", img: "rice_cake.png" },
     10: { name: "魷魚", img: "squid.png" },
-    
-    // ⚠️ 請繼續填寫 Level 11 到 Level 30 的獨特食材...
-    // 範例：
-    11: { name: "隱藏食材_11", img: "ingredient_11.png" },
-    // ...
-    30: { name: "終極大魔王食材", img: "ingredient_30.png" },
+
+    11: { name: "蘿蔔糕", img: "carot_cake.png" },
+    12: { name: "魷魚圈", img: "squid_circle.png" },
+    13: { name: "薯條", img: "french_fries.png" },
+    14: { name: "雞米花", img: "chicken_corn.png" },
+    15: { name: "雞翅", img: "chicken_wing.png" },
+
+    16: { name: "甜不辣", img: "sweet_or_not_spicy.png" },
+    17: { name: "魚板", img: "fish_plate.png" },
+    18: { name: "雞皮", img: "chicken_skin.png" },
+    19: { name: "香菇", img: "mushroom.png" },
+    20: { name: "青椒", img: "green_pepper.png" },
+
+    21: { name: "柳葉魚", img: "leaffish.png" },
+    22: { name: "雞排", img: "chicken_steak.png" },
+    23: { name: "金針菇", img: "enoki.png" },
+    24: { name: "小黃瓜", img: "cucumber.png" },
+    25: { name: "杏鮑菇", img: "king_oyster_mushroom.png" },
+
+    26: { name: "臭豆腐", img: "stinky_tofu.png" },
+    27: { name: "米腸", img: "rice_sausage.png" },
+    28: { name: "百頁豆腐", img: "Baiye_Tofu.png" },
+    29: { name: "地瓜球", img: "sweet_potato_balls.png" },
+    30: { name: "鹹酥雞", img: "Salty_Crispy_Chicken.png" },
 };
 // -----------------------------------------------------------------
 
