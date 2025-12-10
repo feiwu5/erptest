@@ -1,3 +1,4 @@
+import { getConfigByLevel } from "./level_config.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
@@ -61,7 +62,14 @@ function renderPage() {
         // 🎯 核心邏輯：檢查是否已過關
         if (i <= highestLevelCompleted) {
             box.classList.add("passed"); // 添加過關樣式
+            // 取得該關卡的食材圖
+            const cfg = getConfigByLevel(i);
+            const imgSrc = cfg ? `../images/${encodeURIComponent(cfg.rewardImg)}` : "";
+
             box.innerHTML = `
+                <div class="ingredient-badge">
+                    <img src="${imgSrc}" alt="${cfg.rewardName}">
+                </div>
                 <span class="level-number">第${i}關</span>
                 <span class="status-text">已過關</span>
             `;

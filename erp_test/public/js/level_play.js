@@ -3,7 +3,7 @@
 // -------------------------
 // DOM 元素
 // -------------------------
-let quizTitle, questionText, optionsList, nextBtn;
+let quizTitle, questionText, optionsList, nextBtn, prevBtn;
 
 document.addEventListener("DOMContentLoaded", () => {
     // 假設 HTML 裡有這些 ID 的元素
@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     questionText = document.getElementById("question-text");
     optionsList = document.getElementById("options-list");
     nextBtn = document.getElementById("next-btn");
+    prevBtn = document.getElementById("prev-btn");
 
     // 🎯 修正：讀取闖關模式的數據
     const level = localStorage.getItem("current_level") || "N/A";
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (questions.length > 0) {
         showQuestion(current);
         setupNextButton();
+        setupPrevButton(); 
     } else if (questionText) {
         questionText.textContent = `載入題庫失敗或 [${category}] 尚無題目。`;
         if (nextBtn) nextBtn.style.display = 'none';
@@ -90,6 +92,8 @@ function showQuestion(index) {
         });
         optionsList.appendChild(li);
     });
+
+    updateButtonVisibility();
 }
 
 // -------------------------
@@ -115,4 +119,27 @@ function setupNextButton() {
             showQuestion(current);
         }
     });
+}
+
+// -------------------------
+// 上一題
+// -------------------------
+function setupPrevButton() {
+    prevBtn.addEventListener("click", () => {
+        if (current === 0) return;
+
+        current--;
+        showQuestion(current);
+    });
+}
+
+// -------------------------
+// 顯示/隱藏按鈕
+// -------------------------
+function updateButtonVisibility() {
+    // 第一題 → 不顯示上一題
+    prevBtn.style.display = current === 0 ? "none" : "inline-block";
+
+    // 最後一題 → 還是顯示下一題（由程式判定結束）
+    nextBtn.style.display = "inline-block";
 }
